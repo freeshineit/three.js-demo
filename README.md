@@ -1,5 +1,7 @@
 # three.js demo
 
+![build](https://github.com/freeshineit/threejs-demo/workflows/build/badge.svg)
+
 ## Use
 
 ```bash
