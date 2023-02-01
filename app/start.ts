@@ -1,5 +1,7 @@
 import * as THREE from "three";
 
+import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
+
 export function start() {
   const camera = new THREE.PerspectiveCamera(
     70,
@@ -7,6 +9,7 @@ export function start() {
     0.01,
     10
   );
+
   camera.position.z = 1;
 
   const scene = new THREE.Scene();
@@ -15,12 +18,15 @@ export function start() {
   const material = new THREE.MeshNormalMaterial();
 
   const mesh = new THREE.Mesh(geometry, material);
+
   scene.add(mesh);
 
   const renderer = new THREE.WebGLRenderer({ antialias: true });
   renderer.setSize(window.innerWidth, window.innerHeight);
-  renderer.setAnimationLoop(animation);
+  // renderer.setAnimationLoop(animation);
   document.body.appendChild(renderer.domElement);
+
+  const controls = new OrbitControls(camera, renderer.domElement);
 
   // animation
 
@@ -30,4 +36,11 @@ export function start() {
 
     renderer.render(scene, camera);
   }
+
+  function render() {
+    renderer.render(scene, camera);
+    requestAnimationFrame(render);
+  }
+
+  render();
 }
