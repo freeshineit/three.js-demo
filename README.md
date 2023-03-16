@@ -6,15 +6,15 @@
 
 ```bash
 #
-yarn install
+pnpm install
 
 # development
-yarn run dev
+pnpm run dev
 
 # production
-yarn run build
+pnpm run build
 
 # https://github.com/http-party/http-server
 # http-server >= 14
-cd dist && http-server -p 8080
+cd dist && http-server -g -p 8080
 ```
