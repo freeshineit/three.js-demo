@@ -1,5 +1,5 @@
-import "./style.scss";
+import './style.scss'
 
-import { start } from "./start";
+import { start } from './start'
 
-start();
+start()
