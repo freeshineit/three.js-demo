@@ -1,22 +1,26 @@
 {
-    "compilerOptions": {
-        "outDir": "./dist/",
-        "noImplicitAny": true,
-        "sourceMap": true,
-        "module": "ESNext",
-        "moduleResolution": "node",
-        "allowSyntheticDefaultImports": true,
-        "experimentalDecorators": true,
-        "noUnusedLocals": false,
-        "noUnusedParameters": false,
-        "target": "es5",
-        "allowJs": true,
-        "typeRoots": [
-            "node_modules/@types",
-            "@typings",
-            "wasm/pkg"
-        ],
-        "lib": ["DOM", "ESNext"]
-    },
-    "exclude": ["node_modules", "wasm/pkg", "wasm/target"]
- }
+  "compilerOptions": {
+    "target": "ESNext",
+    "useDefineForClassFields": true,
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "allowJs": false,
+    "skipLibCheck": true,
+    "esModuleInterop": false,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react-jsx",
+    "baseUrl": ".",
+    "typeRoots": ["@types", "typings"],
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  },
+  "include": ["src", "typings"],
+  "references": [{ "path": "./tsconfig.node.json" }]
+}
